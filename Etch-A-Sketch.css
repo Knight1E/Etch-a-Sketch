@@ -1,0 +1,7 @@
+.flexParent {
+    display: flex;
+}
+
+.flexKidRow {
+    flex-direction: row;
+}
