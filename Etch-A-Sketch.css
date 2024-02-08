@@ -3,5 +3,6 @@
 }
 
 .flexKidRow {
+    display: flex;
     flex-direction: row;
 }
