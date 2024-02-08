@@ -42,7 +42,7 @@ for (let i = 0; i < gridSizeNumber; i++) {
     // A row of 5
     for (let i = 0; i < gridSizeNumber; i++) {
         var gridRowItem = document.createElement("div");
-        gridRowItem.style.cssText = "margin: auto; flex: 1; width: 100%; background-color: #98eb78; border-style: solid;";
+        gridRowItem.style.cssText = "margin: auto; flex: 1; width: 100%; background-color: #98eb78; border-style: solid; margin-bottom: -2px;";
         gridRowItem.style.height = gridSize;
         gridRowLoop.appendChild(gridRowItem);
     }
