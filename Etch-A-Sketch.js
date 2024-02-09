@@ -22,7 +22,7 @@ appendTest.appendChild(numberButton);
 const inputSpan = document.createElement("span");
 inputSpan.appendChild(inputBar);
 inputSpan.appendChild(numberButton);
-inputSpan.style.marginBottom = "5px";
+inputSpan.style.marginBottom = "20px";
 gridContainer.appendChild(inputSpan);
 // inputSpan.style.cssText = "text-align: center;";
 
