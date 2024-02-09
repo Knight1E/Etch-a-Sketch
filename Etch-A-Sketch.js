@@ -34,6 +34,10 @@ gridRow.appendChild(gridRowItem);*/
 // Testing the grid w/ manual input.
 var gridSizeNumber = 10;
 
+function fillIn(item) {
+    item.style.backgroundColor = "blue";
+}
+
 for (let i = 0; i < gridSizeNumber; i++) {
     let gridSize = (100 / gridSizeNumber) + "%"; // We'd replace the 5 width the # of squares we'd have.
     var gridRowLoop = document.createElement("div");
@@ -42,8 +46,18 @@ for (let i = 0; i < gridSizeNumber; i++) {
     // A row of 5
     for (let i = 0; i < gridSizeNumber; i++) {
         var gridRowItem = document.createElement("div");
-        gridRowItem.style.cssText = "margin: auto; flex: 1; width: 100%; background-color: #98eb78; border-style: solid; margin-bottom: -2px;";
+        gridRowItem.style.cssText = "margin: auto; flex: 1; width: 100%; border-style: solid; margin-bottom: -2px;";
         gridRowItem.style.height = gridSize;
+        gridRowItem.className = "sketchSquare";
+
+        gridRowItem.onmouseover = function(item) {
+            return function() {
+                fillIn(item);
+            };
+
+        }(gridRowItem);
+        
+
         gridRowLoop.appendChild(gridRowItem);
     }
 
