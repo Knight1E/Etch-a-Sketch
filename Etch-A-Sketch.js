@@ -14,10 +14,49 @@ gridContainer.appendChild(inputText);
 
 const inputBar = document.createElement("input");
 inputBar.style.marginRight = "5px";
+inputBar.setAttribute("id", "numberVal");
 
 const numberButton = document.createElement("button");
 numberButton.textContent = "Update";
 appendTest.appendChild(numberButton);
+numberButton.addEventListener("click", function() {
+    var numberValue = parseInt(document.getElementById("numberVal").value);
+    numberButton.value = "";
+    gridSizeNumber = numberValue;
+    while (gridDiv.firstChild) {
+        gridDiv.removeChild(gridDiv.firstChild);
+    }
+    createGrid();
+    numberButton.focus();
+});
+
+/*
+addItemButton.addEventListener("click", (item) => {
+    var itemValue = document.getElementById("item").value;
+    // Had to check the site's code for this line specifically--other than that, I did everything else right.
+    inputBar.value = "";
+    
+    let addedItem = document.createElement("li");
+    let itemSpan = document.createElement("span");
+    let deleteButton = document.createElement("button");
+
+    addedItem.appendChild(itemSpan);
+    addedItem.appendChild(deleteButton);
+
+    itemSpan.textContent = itemValue;
+    deleteButton.textContent = "Delete";
+
+    unorderedList.appendChild(addedItem);
+
+    container.appendChild(unorderedList);
+
+    deleteButton.addEventListener("click", () => {
+      unorderedList.removeChild(addedItem);
+    })
+
+    addItemButton.focus();
+  })
+*/
 
 const inputSpan = document.createElement("span");
 inputSpan.appendChild(inputBar);
@@ -59,6 +98,7 @@ function createGrid () {
     for (let i = 0; i < gridSizeNumber; i++) {
         let gridSize = (100 / gridSizeNumber) + "%"; // We'd replace the 5 width the # of squares we'd have.
         var gridRowLoop = document.createElement("div");
+        gridRowLoop.className = "gridRowLoopClass";
         gridRowLoop.style.cssText = "width: 100%; height: 100%; background-color: blue; margin: auto;";
     
         // A row of 5

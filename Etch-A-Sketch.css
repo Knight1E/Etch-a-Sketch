@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(151, 158, 209);
+}
+
 .flexParent {
     display: flex;
 }
